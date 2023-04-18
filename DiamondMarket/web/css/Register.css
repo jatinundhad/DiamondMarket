@@ -13,6 +13,10 @@ body{
     box-shadow: 0 0 30px #ced4da;
 }
 
+.form-outline{
+    margin-top:30px !important;
+}
+
 .divider:after,
 .divider:before {
     content: "";

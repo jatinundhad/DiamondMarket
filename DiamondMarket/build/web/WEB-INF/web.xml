@@ -8,8 +8,10 @@
         <servlet-name>Register</servlet-name>
         <servlet-class>AuthenticationServlets.Register</servlet-class>
     </servlet>
-    
-    
+    <servlet>
+        <servlet-name>Dashboard</servlet-name>
+        <servlet-class>Dashboard.Dashboard</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>RegisterForm</servlet-name>
         <url-pattern>/register</url-pattern>
@@ -17,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>Register</servlet-name>
         <url-pattern>/Register</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Dashboard</servlet-name>
+        <url-pattern>/Dashboard</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>
