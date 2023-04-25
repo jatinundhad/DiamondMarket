@@ -1,6 +1,8 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html>
-    <head>
-        <title>Registration Form</title>
+     <head>
+        <title>Registration</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/Register.css" />
@@ -23,8 +25,8 @@
             <div class="container-fluid h-custom">
                 <div class="row d-flex justify-content-center align-items-center h-100">
                     <div class="col-md-9 col-lg-6 col-xl-5">
-                        <img src="images/diamond.jpg"
-                             class="img-fluid img" alt="Sample image">
+                        <img src="images/diamond.png"
+                             class="img-fluid img" alt="diamondImg">
                     </div>
                     <div class="register col-md-8 col-lg-6 col-xl-4 offset-xl-1">
 
@@ -33,13 +35,12 @@
                                 <span class="h1 fw-bold mb-0">Register</span>
                             </div>
 
-                            <!--GST input-->
+                            <!--Company ID-->
                             <div class="form-outline mb-4">
-                                <input type="text" id="f1" name="gstno" class="form-control form-control-lg"
-                                       placeholder="Enter a valid GST Number" required />
-                                <label class="form-label" for="f1">GST Number</label>
-                                <div class="invalid-feedback">Please fill up this field.</div>
-                                <div class="valid-feedback">Looks good!</div>
+                                <input type="text" id="f1" name="comapanyId" class="form-control form-control-lg"
+                                       placeholder="Enter a valid Company ID" required />
+                                <label class="form-label" for="f1">Company ID</label>
+                                <div class="invalid-feedback">Please Enter valid information.</div>
                             </div>
 
                             <!--Company Name-->
@@ -47,8 +48,7 @@
                                 <input type="text" id="f2" name="companyname" class="form-control form-control-lg"
                                        placeholder="Enter your company's name" required />
                                 <label class="form-label" for="f2">Comapany Name</label>
-                                <div class="invalid-feedback">Please fill up this field.</div>
-                                <div class="valid-feedback">Looks good!</div>
+                                <div class="invalid-feedback">Please Enter valid information.</div>
                             </div>
 
                             <!-- Email input -->
@@ -56,8 +56,7 @@
                                 <input type="email" id="f3" name="email" class="form-control form-control-lg"
                                        placeholder="Enter a valid email address" required />
                                 <label class="form-label" for="f3">Email address</label>
-                                <div class="invalid-feedback">Please fill up this field.</div>
-                                <div class="valid-feedback">Looks good!</div>
+                                <div class="invalid-feedback">Please Enter valid information.</div>
                             </div>
 
                             <!--Contact-->
@@ -65,8 +64,7 @@
                                 <input type="text" id="f4" name="contact" class="form-control form-control-lg"
                                        placeholder="Enter a valid Contact Number" minlength="10" maxlength="10" required/>
                                 <label class="form-label" for="f4">Contact</label>
-                                <div class="invalid-feedback">Please fill up this field.</div>
-                                <div class="valid-feedback">Looks good!</div>
+                                <div class="invalid-feedback">Please Enter valid information.</div>
                             </div>
 
                             <!-- Password input -->
@@ -74,14 +72,20 @@
                                 <input type="password" id="f5" name="password" class="form-control form-control-lg"
                                        placeholder="Enter password" required/>
                                 <label class="form-label" for="f5">Password</label>
-                                <div class="invalid-feedback">Please fill up this field.</div>
-                                <div class="valid-feedback">Looks good!</div>
+                                <div class="invalid-feedback">Please Enter valid information.</div>
+                            </div>
+                            
+                            <div class="form-outline mb-3">
+                                <input type="password" id="f5" name="cfmpassword" class="form-control form-control-lg"
+                                       placeholder="Enter password again" required/>
+                                <label class="form-label" for="f5">Confirm Password</label>
+                                <div class="invalid-feedback">Please Enter valid information.</div>
                             </div>
 
                             <div class="text-center text-lg-start mt-4 pt-2">
                                 <button type="submit" class="btn btn-primary btn-lg"
                                         style="padding-left: 2.5rem; padding-right: 2.5rem;">Register</button>
-                                <p class="small fw-bold mt-2 pt-1 mb-0">Already have an account? <a href="#!"
+                                <p class="small fw-bold mt-2 pt-1 mb-0">Already have an account? <a href="LoginForm"
                                                                                                     class="link-danger">Login</a></p>
                             </div>
 

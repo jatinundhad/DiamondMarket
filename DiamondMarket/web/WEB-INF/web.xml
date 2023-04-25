@@ -9,20 +9,28 @@
         <servlet-class>AuthenticationServlets.Register</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>Dashboard</servlet-name>
-        <servlet-class>Dashboard.Dashboard</servlet-class>
+        <servlet-name>LoginForm</servlet-name>
+        <servlet-class>AuthenticationServlets.LoginForm</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Login</servlet-name>
+        <servlet-class>AuthenticationServlets.Login</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>RegisterForm</servlet-name>
-        <url-pattern>/register</url-pattern>
+        <url-pattern>/RegisterForm</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginForm</servlet-name>
+        <url-pattern>/LoginForm</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>Register</servlet-name>
         <url-pattern>/Register</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>Dashboard</servlet-name>
-        <url-pattern>/Dashboard</url-pattern>
+        <servlet-name>Login</servlet-name>
+        <url-pattern>/Login</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>

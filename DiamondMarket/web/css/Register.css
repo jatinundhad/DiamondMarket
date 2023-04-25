@@ -8,11 +8,6 @@ body{
     border-radius: 10px;
 }
 
-.img{
-    border-radius: 10px;
-    box-shadow: 0 0 30px #ced4da;
-}
-
 .form-outline{
     margin-top:30px !important;
 }
@@ -32,4 +27,3 @@ body{
         height: 100%;
     }
 }
-
