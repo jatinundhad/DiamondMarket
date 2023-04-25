@@ -37,7 +37,7 @@
 
                             <!--Company ID-->
                             <div class="form-outline mb-4">
-                                <input type="text" id="f1" name="comapanyId" class="form-control form-control-lg"
+                                <input type="text" id="f1" name="companyId" class="form-control form-control-lg"
                                        placeholder="Enter a valid Company ID" required />
                                 <label class="form-label" for="f1">Company ID</label>
                                 <div class="invalid-feedback">Please Enter valid information.</div>
@@ -45,9 +45,9 @@
 
                             <!--Company Name-->
                             <div class="form-outline mb-4">
-                                <input type="text" id="f2" name="companyname" class="form-control form-control-lg"
+                                <input type="text" id="f2" name="companyName" class="form-control form-control-lg"
                                        placeholder="Enter your company's name" required />
-                                <label class="form-label" for="f2">Comapany Name</label>
+                                <label class="form-label" for="f2">Company Name</label>
                                 <div class="invalid-feedback">Please Enter valid information.</div>
                             </div>
 
@@ -76,7 +76,7 @@
                             </div>
                             
                             <div class="form-outline mb-3">
-                                <input type="password" id="f5" name="cfmpassword" class="form-control form-control-lg"
+                                <input type="password" id="f5" name="cfmPassword" class="form-control form-control-lg"
                                        placeholder="Enter password again" required/>
                                 <label class="form-label" for="f5">Confirm Password</label>
                                 <div class="invalid-feedback">Please Enter valid information.</div>
@@ -85,7 +85,7 @@
                             <div class="text-center text-lg-start mt-4 pt-2">
                                 <button type="submit" class="btn btn-primary btn-lg"
                                         style="padding-left: 2.5rem; padding-right: 2.5rem;">Register</button>
-                                <p class="small fw-bold mt-2 pt-1 mb-0">Already have an account? <a href="LoginForm"
+                                <p class="small fw-bold mt-2 pt-1 mb-0">Already have an account? <a href="Login"
                                                                                                     class="link-danger">Login</a></p>
                             </div>
 

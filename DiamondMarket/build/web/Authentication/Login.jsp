@@ -37,7 +37,7 @@
 
                             <!--Company ID-->
                             <div class="form-outline mb-4">
-                                <input type="text" id="f1" name="comapanyId" class="form-control form-control-lg"
+                                <input type="text" id="f1" name="companyId" class="form-control form-control-lg"
                                        placeholder="Enter a valid Company ID" required />
                                 <label class="form-label" for="f1">Company ID</label>
                                 <div class="invalid-feedback">Please Enter valid information.</div>
@@ -54,7 +54,7 @@
                             <div class="text-center text-lg-start mt-4 pt-2">
                                 <button type="submit" class="btn btn-primary btn-lg"
                                         style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
-                                <p class="small fw-bold mt-2 pt-1 mb-0">Do not have an account? <a href="RegisterForm"
+                                <p class="small fw-bold mt-2 pt-1 mb-0">Do not have an account? <a href="Register"
                                                                                                     class="link-danger">Register</a></p>
                             </div>
 

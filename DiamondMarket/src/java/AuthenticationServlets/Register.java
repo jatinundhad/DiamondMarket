@@ -1,5 +1,6 @@
 package AuthenticationServlets;
 
+import Database.Database;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -13,8 +14,34 @@ public class Register extends HttpServlet {
             throws ServletException, IOException {
         
         // inserting all the information into database
+        Database db = new Database();
+
+        db.connect();
+
+        String companyId = request.getParameter("companyId").trim();
+        String companyName = request.getParameter("companyName").trim();
+        String email = request.getParameter("email").trim();
+        String contact = request.getParameter("contact").trim();
+        String password = request.getParameter("password").trim();
+
+        String query = "INSERT INTO `user_credentials` VALUES('"+companyId+"','"+companyName+"','"+password+"','"+email+"','"+contact+"')";
+
+        try {
+            db.stmt = db.con.createStatement();
+            db.stmt.executeUpdate(query);
+        } catch (Exception e) {
+            System.out.println("Error: " + e);
+        }
+
+        db.close();
         
         response.setContentType("text/html");
-        request.getRequestDispatcher("Profile/profile.jsp").forward(request, response);
+        request.getRequestDispatcher("Login").forward(request, response);
+    }
+    
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        request.getRequestDispatcher("/Authentication/Register.jsp").forward(request, response);
     }
 }
