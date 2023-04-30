@@ -7,12 +7,12 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
         <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css" rel="stylesheet"/>
-        <!--<link href="CSS/SellStyle.css" rel="stylesheet" type="text/css"/>-->
+        <link rel="stylesheet" href="./css/scrollbar.css"/>
     </head>
 
     <body>
-        
-       <jsp:include page="../Partials/navbar.jsp" />
+
+        <jsp:include page="../Partials/navbar.jsp" />
         <form action="sellDiamond" method="POST">
             <section class="h-100 bg-dark">
                 <div class="container h-100" style="padding-bottom: 33px; padding-top: 33px">
@@ -25,7 +25,8 @@
                                     </div>
                                     <div class="col-xl-6 mt-5">
                                         <div class="card-body p-md-5 text-black">
-                                            <h3 class="mb-5">Diamond Detail</h3>
+                                            <h1 class="mb-2 border-bottom pb-2">Sell Diamond </h1>
+                                            <h3 class="mb-4 mt-3">Diamond Details</h3>
 
                                             <div class="row">
                                                 <div class="col-md-6 mb-4">
@@ -163,26 +164,28 @@
                 </div>
             </section>
         </form>
-           
-        <script type="text/javascript">
-            function calculatePrice(price) {
-                var weight = document.getElementById('weight');
-                var totalPrice = weight.value * price.value;
 
-                document.getElementById("totalPrice").value = "Total:\t\t\t" + Math.round(totalPrice);
-            }
+        <jsp:include page="../Partials/footer.html"/>
 
-            function calculateRapPrice(rapPrice) {
-                var weight = document.getElementById('weight');
-                var totalRapPrice = weight.value * rapPrice.value;
-
-                document.getElementById("totalRapPrice").value = "RAP Total:\t\t" + Math.round(totalRapPrice);
-            }
-        </script>
-
-
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.js"></script>
     </body>
+    <script type="text/javascript">
+        function calculatePrice(price) {
+            var weight = document.getElementById('weight');
+            var totalPrice = weight.value * price.value;
+
+            document.getElementById("totalPrice").value = "Total:\t\t\t" + Math.round(totalPrice);
+        }
+
+        function calculateRapPrice(rapPrice) {
+            var weight = document.getElementById('weight');
+            var totalRapPrice = weight.value * rapPrice.value;
+
+            document.getElementById("totalRapPrice").value = "RAP Total:\t\t" + Math.round(totalRapPrice);
+        }
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.js"></script>
 
 </html>

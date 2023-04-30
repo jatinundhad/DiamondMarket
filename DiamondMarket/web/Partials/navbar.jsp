@@ -37,7 +37,7 @@
                     <a class="nav-link" href="sellDiamond">Sell Diamonds</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Buy Diamonds</a>
+                    <a class="nav-link" href="buyDiamond">Buy Diamonds</a>
                 </li>
             </ul>
 

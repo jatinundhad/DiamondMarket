@@ -4,7 +4,7 @@
     <div class="card mx-2" v style="width: 30%; text-align: center">
         <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
             <img src="./images/MC-1.jpg" class="img-fluid card-img"/>
-            <a href="http://localhost/Innovative/Buy.php">
+            <a href="buyDiamond">
                 <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
             </a>
         </div>
@@ -13,7 +13,7 @@
             <p class="card-text">We are here for your luxury needs. Access very huge market of luxury quality diamonds
                 in
                 just a minute.</p>
-            <a href="Buy.php" class="btn btn-dark">Buy Now</a>
+            <a href="buyDiamond" class="btn btn-dark">Buy Now</a>
         </div>
     </div>
 

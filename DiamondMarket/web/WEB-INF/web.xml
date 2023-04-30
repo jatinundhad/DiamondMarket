@@ -9,8 +9,8 @@
         <url-pattern>/sellDiamond</url-pattern>
         <url-pattern>/Profile</url-pattern>
         <url-pattern>/Logout</url-pattern>
+        <url-pattern>/buyDiamond</url-pattern>
     </filter-mapping>
-    
     <servlet>
         <servlet-name>Register</servlet-name>
         <servlet-class>AuthenticationServlets.Register</servlet-class>
@@ -31,6 +31,10 @@
         <servlet-name>sellDiamond</servlet-name>
         <servlet-class>Diamond.sellDiamond</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>buyDiamond</servlet-name>
+        <servlet-class>Diamond.buyDiamond</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Register</servlet-name>
         <url-pattern>/Register</url-pattern>
@@ -50,6 +54,10 @@
     <servlet-mapping>
         <servlet-name>sellDiamond</servlet-name>
         <url-pattern>/sellDiamond</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>buyDiamond</servlet-name>
+        <url-pattern>/buyDiamond</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>
