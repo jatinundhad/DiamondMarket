@@ -35,6 +35,14 @@
         <servlet-name>buyDiamond</servlet-name>
         <servlet-class>Diamond.buyDiamond</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>addToCart</servlet-name>
+        <servlet-class>Diamond.addToCart</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>cart</servlet-name>
+        <servlet-class>Diamond.cart</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Register</servlet-name>
         <url-pattern>/Register</url-pattern>
@@ -58,6 +66,14 @@
     <servlet-mapping>
         <servlet-name>buyDiamond</servlet-name>
         <url-pattern>/buyDiamond</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>addToCart</servlet-name>
+        <url-pattern>/addToCart</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>cart</servlet-name>
+        <url-pattern>/cart</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>

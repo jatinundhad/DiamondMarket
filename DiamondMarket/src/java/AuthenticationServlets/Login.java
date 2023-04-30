@@ -4,6 +4,7 @@ import Database.Database;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.ResultSet;
+import java.util.Vector;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -45,6 +46,7 @@ public class Login extends HttpServlet {
                 HttpSession session = request.getSession(true);
                 session.setAttribute("companyId", CompanyId);
                 session.setAttribute("loggedIn", true);
+                session.setAttribute("cart", new String[0]);
 
                 request.getRequestDispatcher("index.jsp").forward(request, response);
                 

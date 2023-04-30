@@ -2,6 +2,7 @@ package AuthenticationServlets;
 
 import Database.Database;
 import java.io.IOException;
+import java.util.Vector;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -13,7 +14,7 @@ public class Register extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
         // inserting all the information into database
         Database db = new Database();
 
@@ -25,26 +26,27 @@ public class Register extends HttpServlet {
         String contact = request.getParameter("contact").trim();
         String password = request.getParameter("password").trim();
 
-        String query = "INSERT INTO `user_credentials` VALUES('"+companyId+"','"+companyName+"','"+password+"','"+email+"','"+contact+"')";
+        String query = "INSERT INTO `user_credentials` VALUES('" + companyId + "','" + companyName + "','" + password + "','" + email + "','" + contact + "')";
 
         try {
             db.stmt = db.con.createStatement();
             db.stmt.executeUpdate(query);
-            
+
             // doing login just after registering
             HttpSession session = request.getSession(true);
             session.setAttribute("companyId", companyId);
             session.setAttribute("loggedIn", true);
+            session.setAttribute("cart", new String[0]);
         } catch (Exception e) {
             System.out.println("Error: " + e);
         }
 
         db.close();
-        
+
         response.setContentType("text/html");
         response.sendRedirect("/DiamondMarket");
     }
-    
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
