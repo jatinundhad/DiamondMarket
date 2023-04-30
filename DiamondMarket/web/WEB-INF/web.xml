@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <filter>
+        <filter-name>isLoggedIn</filter-name>
+        <filter-class>Filters.isLoggedIn</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>isLoggedIn</filter-name>
+        <url-pattern>/sellDiamond</url-pattern>
+        <url-pattern>/Profile</url-pattern>
+        <url-pattern>/Logout</url-pattern>
+    </filter-mapping>
+    
     <servlet>
         <servlet-name>Register</servlet-name>
         <servlet-class>AuthenticationServlets.Register</servlet-class>
@@ -12,6 +23,14 @@
         <servlet-name>Profile</servlet-name>
         <servlet-class>Profile.Profile</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Logout</servlet-name>
+        <servlet-class>AuthenticationServlets.Logout</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>sellDiamond</servlet-name>
+        <servlet-class>Diamond.sellDiamond</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Register</servlet-name>
         <url-pattern>/Register</url-pattern>
@@ -23,6 +42,14 @@
     <servlet-mapping>
         <servlet-name>Profile</servlet-name>
         <url-pattern>/Profile</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Logout</servlet-name>
+        <url-pattern>/Logout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>sellDiamond</servlet-name>
+        <url-pattern>/sellDiamond</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>

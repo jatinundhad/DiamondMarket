@@ -4,11 +4,12 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/D:/6th%20Sem/Adavace%20Java/Innovative/DiamondMarket/web/Authentication/Login.jsp</file>
-            <file>file:/D:/6th%20Sem/Adavace%20Java/Innovative/DiamondMarket/src/java/AuthenticationServlets/Register.java</file>
-            <file>file:/D:/6th%20Sem/Adavace%20Java/Innovative/DiamondMarket/src/java/AuthenticationServlets/RegisterForm.java</file>
+            <file>file:/D:/6th%20Sem/Adavace%20Java/Innovative/DiamondMarket/web/WEB-INF/web.xml</file>
+            <file>file:/D:/6th%20Sem/Adavace%20Java/Innovative/DiamondMarket/src/java/Diamond/sellDiamond.java</file>
+            <file>file:/D:/6th%20Sem/Adavace%20Java/Innovative/DiamondMarket/src/java/Filters/isLoggedIn.java</file>
             <file>file:/D:/6th%20Sem/Adavace%20Java/Innovative/DiamondMarket/src/java/AuthenticationServlets/Login.java</file>
-            <file>file:/D:/6th%20Sem/Adavace%20Java/Innovative/DiamondMarket/web/Authentication/Register.jsp</file>
-            <file>file:/D:/6th%20Sem/Adavace%20Java/Innovative/DiamondMarket/web/css/Register.css</file>
+            <file>file:/D:/6th%20Sem/Adavace%20Java/Innovative/DiamondMarket/web/Diamond/sellDiamondForm.jsp</file>
+            <file>file:/D:/6th%20Sem/Adavace%20Java/Innovative/DiamondMarket/web/index.jsp</file>
         </group>
     </open-files>
 </project-private>

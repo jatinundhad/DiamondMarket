@@ -1,0 +1,21 @@
+#aboutUs{
+    margin: 66px;
+    text-align: center;
+}
+
+.heading{
+    display: flex;
+    justify-content: center;
+}
+
+#aboutUs h2{
+    margin-bottom: 30px;
+    border-bottom: 1px solid lightgray;
+    padding: 10px 0;
+    padding-top: 30px;
+    width: 70%;
+}
+
+#aboutUs p{
+    line-height: 30px;
+}

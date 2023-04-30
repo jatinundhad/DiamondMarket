@@ -6,6 +6,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 public class Register extends HttpServlet {
 
@@ -29,6 +30,11 @@ public class Register extends HttpServlet {
         try {
             db.stmt = db.con.createStatement();
             db.stmt.executeUpdate(query);
+            
+            // doing login just after registering
+            HttpSession session = request.getSession(true);
+            session.setAttribute("companyId", companyId);
+            session.setAttribute("loggedIn", true);
         } catch (Exception e) {
             System.out.println("Error: " + e);
         }
@@ -36,7 +42,7 @@ public class Register extends HttpServlet {
         db.close();
         
         response.setContentType("text/html");
-        request.getRequestDispatcher("Login").forward(request, response);
+        response.sendRedirect("/DiamondMarket");
     }
     
     @Override

@@ -1,7 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-     <head>
+    <head>
         <title>Registration</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,7 +30,7 @@
                     </div>
                     <div class="register col-md-8 col-lg-6 col-xl-4 offset-xl-1">
 
-                        <form action="Register" method="post" class="needs-validation" novalidate>
+                        <form action="Register" method="post" class="needs-validation" id="register" novalidate>
                             <div class="d-flex align-items-center mb-3 pb-1">
                                 <span class="h1 fw-bold mb-0">Register</span>
                             </div>
@@ -74,13 +74,15 @@
                                 <label class="form-label" for="f5">Password</label>
                                 <div class="invalid-feedback">Please Enter valid information.</div>
                             </div>
-                            
+
                             <div class="form-outline mb-3">
                                 <input type="password" id="f5" name="cfmPassword" class="form-control form-control-lg"
                                        placeholder="Enter password again" required/>
                                 <label class="form-label" for="f5">Confirm Password</label>
                                 <div class="invalid-feedback">Please Enter valid information.</div>
                             </div>
+                            
+                            <div id="errorPass" class="form-label" style="color: red;"></div> 
 
                             <div class="text-center text-lg-start mt-4 pt-2">
                                 <button type="submit" class="btn btn-primary btn-lg"
@@ -88,6 +90,7 @@
                                 <p class="small fw-bold mt-2 pt-1 mb-0">Already have an account? <a href="Login"
                                                                                                     class="link-danger">Login</a></p>
                             </div>
+                           
 
                         </form>
                     </div>
@@ -95,12 +98,30 @@
             </div>
 
         </section>
+        <jsp:include page="../Partials/footer.html"/>
+
     </body>
 
     <script
         type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.js"
     ></script>
+    
+    <script>
+        document.getElementById("register").addEventListener("submit", (e) => {
+            const password = document.querySelector("input[name=password]");
+            const cfmPassword = document.querySelector("input[name=cfmPassword]");
+            const errorPass = document.getElementById("errorPass");
+            
+            if((password.value).trim() != (cfmPassword.value).trim()){
+                e.preventDefault();
+                errorPass.innerHTML = "Password not Matched.";
+            }else{
+                console.log("password matched");    
+                errorPass.innerHTML = "";
+            }
+        })
+    </script>
 
     <script type="text/javascript" src="scripts/validation.js"></script>
 </html>

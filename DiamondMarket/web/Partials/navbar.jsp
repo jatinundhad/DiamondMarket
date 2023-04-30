@@ -1,3 +1,16 @@
+<link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    rel="stylesheet"
+    />
+<link
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    rel="stylesheet"
+    />
+<link
+    href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css"
+    rel="stylesheet"
+    />
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
         <button
@@ -13,27 +26,36 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <a class="navbar-brand mt-2 mt-lg-0" href="#">
+            <a class="navbar-brand mt-2 mt-lg-0" href="/DiamondMarket">
                 B2B Diamond Market
             </a>
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About Us</a>
+                    <a class="nav-link" href="#aboutUs">About Us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Sell Diamonds</a>
+                    <a class="nav-link" href="sellDiamond">Sell Diamonds</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Buy Diamonds</a>
                 </li>
             </ul>
-            
-            
-              <div>
-            <a class="btn btn-primary me-1 mb-1" href="Register">Register</a>
-            <a class="btn btn-secondary me-2 mb-1" href="Login">Login</a>
-        </div>
+
+
+            <%
+                if (session != null && session.getAttribute("loggedIn") == null) {
+            %>
+            <div>
+                <a class="btn btn-primary me-1 mb-1" href="Register">Register</a>
+                <a class="btn btn-secondary me-2 mb-1" href="Login">Login</a>
+            </div>
+            <%
+                }
+            %>
+
         </div>
 
 
-      
 
         <div class="dropdown">
             <a
@@ -44,26 +66,33 @@
                 data-mdb-toggle="dropdown"
                 aria-expanded="false"
                 >
-                <img
-                    src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
-                    class="rounded-circle m-1"
-                    height="35"
-                    alt="Black and White Portrait of a Man"
-                    loading="lazy"
-                    />
+
+                <%
+                    if (session != null && session.getAttribute("loggedIn") != null && (Boolean) session.getAttribute("loggedIn")) {
+                %>
+                <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle m-1" height="35" alt="Black and White Portrait of a Man" loading="lazy"/>
+                <h5 class="mt-2"><%= session.getAttribute("companyId")%></h5>
+                <% }%>
+
             </a>
             <ul
                 class="dropdown-menu dropdown-menu-end"
                 aria-labelledby="navbarDropdownMenuAvatar"
                 >
                 <li>
-                    <a class="dropdown-item" href="#">My profile</a>
+                    <a class="dropdown-item" href="Profile">My profile</a>
                 </li>
                 <li>
-                    <a class="dropdown-item" href="#">Logout</a>
+                    <a class="dropdown-item" href="Logout">Logout</a>
                 </li>
             </ul>
         </div>
     </div>
 </div>
 </nav>
+
+
+<script
+    type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.js"
+></script>
