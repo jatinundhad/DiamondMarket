@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 public class addToCart extends HttpServlet {
+    
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
