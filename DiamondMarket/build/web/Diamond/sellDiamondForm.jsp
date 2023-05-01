@@ -13,6 +13,9 @@
     <body>
 
         <jsp:include page="../Partials/navbar.jsp" />
+         <% if (request.getAttribute("sellItemAdded") != null) {%>
+        <h4 class=" text-center py-2"style="background-color: lightgreen"><%= request.getAttribute("sellItemAdded")%></h4>
+        <% } %>
         <form action="sellDiamond" method="POST">
             <section class="h-100 bg-dark">
                 <div class="container h-100" style="padding-bottom: 33px; padding-top: 33px">

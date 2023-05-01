@@ -79,8 +79,14 @@
                 out.println(error);
             }
 
+            db.close();
+
         %>
 
+         <% if (request.getAttribute("removeSell") != null) {%>
+        <h4 class=" text-center py-2"style="background-color: lightgreen"><%= request.getAttribute("removeSell")%></h4>
+        <% } %>
+        
         <section style="background-color: #eee;">
             <div class="container pt-5">
                 <div class="row">
@@ -90,10 +96,10 @@
                                 <h2 class="mt-1"><%= companyId%></h2>
                                 <h5 class="text-muted mb-4">Diamond Dealer</h5>
                                 <div class="mb-2 d-flex justify-content-center">
-                                    <div><span  class="badge badge-danger m-1 fs-6"> Live on Sell <%= sellOrders.size() %></span></div>
-                                     <div><span  class="badge badge-warning m-1 fs-6">Buyings <%= BuyOrders.size() %></span></div>
-                                     <div><span  class="badge badge-success m-1 fs-6">Sold Diamonds <%= SoldOrders.size() %></span></div>
-                                    </div>
+                                    <div><span  class="badge badge-danger m-1 fs-6"> Live on Sell <%= sellOrders.size()%></span></div>
+                                    <div><span  class="badge badge-warning m-1 fs-6">Buyings <%= BuyOrders.size()%></span></div>
+                                    <div><span  class="badge badge-success m-1 fs-6">Sold Diamonds <%= SoldOrders.size()%></span></div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -147,7 +153,7 @@
                                     <th scope="col">Table</th>
                                     <th scope="col">Depther</th>
                                     <th scope="col">Price</th>
-                                    <th scope="col">Remove</th>
+                                    <th scope="col"></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -164,7 +170,10 @@
                                     <td><%= dm.table%></td>
                                     <td><%= dm.depther%></td>
                                     <td><%= dm.totalPrice%></td>
-                                    <td><button class="btn btn-danger">Remove</button></td>
+                                    <td><form action="Profile" method="post">
+                                            <input type="hidden" name="reportNo" value="<%= dm.reportNo%>"></input>
+                                            <button class="btn btn-danger">Remove</button>
+                                        </form></td>
                                 </tr>
                                 <% srno++;
                                     }%>

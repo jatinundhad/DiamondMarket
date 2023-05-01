@@ -46,7 +46,8 @@ public class sellDiamond extends HttpServlet {
             db.stmt = db.con.createStatement();
             db.stmt.executeUpdate(query);
             
-            request.getRequestDispatcher("index.jsp").forward(request, response);
+            request.setAttribute("sellItemAdded", "Your Diamond is on sell Now!!!");
+            request.getRequestDispatcher("/Diamond/sellDiamondForm.jsp").forward(request, response);
             
         } catch (Exception error) {
             out.print(error);
