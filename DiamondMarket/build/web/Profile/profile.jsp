@@ -89,12 +89,11 @@
                             <div class="card-body text-center">
                                 <h2 class="mt-1"><%= companyId%></h2>
                                 <h5 class="text-muted mb-4">Diamond Dealer</h5>
-                                <div class="d-flex justify-content-center mb-2">
-                                    <?php
-                                    require 'Partials/Profile/updateProfile.php';
-                                    ?>
-                                    <button type="button" class="btn btn-danger ms-1" onclick="location.replace('Partials/Profile/deleteProfile.php')">Delete Account</button>
-                                </div>
+                                <div class="mb-2 d-flex justify-content-center">
+                                    <div><span  class="badge badge-danger m-1 fs-6"> Live on Sell <%= sellOrders.size() %></span></div>
+                                     <div><span  class="badge badge-warning m-1 fs-6">Buyings <%= BuyOrders.size() %></span></div>
+                                     <div><span  class="badge badge-success m-1 fs-6">Sold Diamonds <%= SoldOrders.size() %></span></div>
+                                    </div>
                             </div>
                         </div>
                     </div>
