@@ -13,6 +13,9 @@
     <body>
         <!-- Navigation Bar -->
         <jsp:include page="./Partials/navbar.jsp" />
+        <% if (request.getAttribute("confiramtion") != null) {%>
+        <h4 class=" text-center py-2"style="background-color: lightgreen"><%= request.getAttribute("confiramtion")%></h4>
+        <% }%>
         <!-- Carousel -->
         <jsp:include page="./home/corousel.jsp" />
         <!--about us-->
@@ -24,7 +27,7 @@
     </body>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-  
-    
-    
+
+
+
 </html>

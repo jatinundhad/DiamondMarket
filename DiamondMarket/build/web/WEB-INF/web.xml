@@ -43,6 +43,10 @@
         <servlet-name>cart</servlet-name>
         <servlet-class>Diamond.cart</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>purchase</servlet-name>
+        <servlet-class>Diamond.purchase</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Register</servlet-name>
         <url-pattern>/Register</url-pattern>
@@ -74,6 +78,10 @@
     <servlet-mapping>
         <servlet-name>cart</servlet-name>
         <url-pattern>/cart</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>purchase</servlet-name>
+        <url-pattern>/purchase</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>

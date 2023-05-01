@@ -7,7 +7,6 @@
 <html lang="en">
 
     <head>
-        <link type="text/css" rel="stylesheet" href="CSS/CartStyle.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
         <title>Cart</title>
     </head>
@@ -103,7 +102,7 @@
 
 
                                             <div class="pt-5">
-                                                <h6 class="mb-0"><a href="buyDiamond" class="text-body"><i
+                                                <h6 class="mb-0 text-center"><a href="buyDiamond" class="text-body  btn btn-light"><i
                                                             class="fas fa-long-arrow-alt-left me-2"></i>Let's Buy</a></h6>
                                             </div>
                                         </div>
@@ -115,27 +114,29 @@
                                             <hr class="my-4">
 
                                             <div class="d-flex justify-content-between mb-4">
-                                                <h5 class="text-uppercase">items <%= size%></h5>
+                                                <h5>Items <%= size%></h5>
                                                 <h5 >$<span id="itemPrice"><%= totalamount%></span></h5>
                                             </div>
 
-                                            <h5 class="text-uppercase mb-3">Shipping</h5>
+                                            <h5 class=" mb-3">Shipping</h5>
 
                                             <div class="mb-4 pb-2">
-                                                <select class="select" id="deliveryType" onchange="getDeliveryType()">
+                                                <select class="select p-2" style="
+                                                        border: 1px solid lightgray;
+                                                        " id="deliveryType" onchange="getDeliveryType()">
                                                     <option value="sd">Standard Delivery- $5.00</option>
                                                     <option value="fd">Fast Delivery- $10.00</option>
                                                 </select>
                                             </div>
 
-                                            <form action="Purcahse.php" method="POST">
-                                                <h5 class="text-uppercase mb-3">Address</h5>
+                                            <form action="purchase" method="POST">
+                                                <h5 class=mb-3">Address</h5>
 
                                                 <div class="mb-5">
                                                     <div class="form-outline">
-                                                        <input type="text" id="form3Examplea2" name="address"
+                                                        <input type="text" id="c" name="address"
                                                                class="form-control form-control-lg" required/>
-                                                        <label class="form-label" for="form3Examplea2">Enter your
+                                                        <label class="form-label" for="address">Enter your
                                                             address</label>
                                                     </div>
                                                 </div>
@@ -147,9 +148,9 @@
                                                     <h5 id="totalAmount"></h5>
                                                 </div>
 
-                                                <button type="button" class="btn btn-success btn-block btn-lg"
-                                                        onclick="purchaseRedirect()"
-                                                        data-mdb-ripple-color="dark">Purchase
+                                                <button type="submit" id="purchaseButton" class="btn btn-success btn-block btn-lg"
+                                                        data-mdb-ripple-color="dark"
+                                                        >Purchase
                                                 </button>
                                             </form>
                                         </div>
@@ -168,20 +169,27 @@
             let itemPrice = parseInt(document.getElementById("itemPrice").innerHTML);
             let totalAmount = document.getElementById("totalAmount");
             let deliveryType = document.getElementById("deliveryType");
+            let purchaseBtn = document.getElementById("purchaseButton");
 
             function getDeliveryType() {
                 if (itemPrice == 0) {
-                    totalAmount.innerText = 0;
+                    totalAmount.innerText = "$" + 0;
                     return;
                 }
                 if (deliveryType.value == "sd") {
-                    let amount = itemPrice + 5;
-                    totalAmount.innerText = amount;
+                    let amount = itemPrice + 5 ;
+                    totalAmount.innerText = "$" + amount;
                 } else {
                     let amount = itemPrice + 10;
-                    totalAmount.innerText = amount;
+                    totalAmount.innerText = "$" + amount;
 
                 }
+            }
+            
+            if(itemPrice == 0){
+                purchaseBtn.disabled = true;
+            }else{
+                purchaseBtn.disabled = false;
             }
 
             getDeliveryType();

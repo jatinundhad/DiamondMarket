@@ -16,9 +16,15 @@
 
         <jsp:include page="../Partials/navbar.jsp" />
 
-        <% if(request.getAttribute("notification") != null) { %>
-        <h4 class=" text-center py-2"style="background-color: lightgreen"><%= request.getAttribute("notification") %></h4>
+        <% if (request.getAttribute("notification") != null) {%>
+        <h4 class=" text-center py-2"style="background-color: lightgreen"><%= request.getAttribute("notification")%></h4>
         <% } %>
+
+        <%
+            Vector<Diamond> data = (Vector<Diamond>) request.getAttribute("data");
+            if (data.size() != 0) {
+        %>
+        <h2 class="mt-4 text-center">Diamonds are in sell</h2>
         <form action="addToCart" method="POST">
             <div class="container-xxl border rounded-8 my-5 py-3">
                 <table id="dataTable" class="display table" style="width:100%">
@@ -44,10 +50,6 @@
                     </thead>
                     <tbody>
                         <%
-                           
-                            Vector<Diamond> data = (Vector<Diamond>) request.getAttribute("data");
-                            
-                            if(data != null){
                             for (Diamond dm : data) {
                         %>
                         <tr>
@@ -72,7 +74,7 @@
                             <td><%= dm.totalRapPrice%></td>
                             <td><%= dm.cert%></td>
                         </tr>
-                        <% }} %>
+                        <% }%>
                     </tbody>
                 </table>
                 <div class="container-xxl rounded-8">
@@ -80,6 +82,9 @@
                 </div>
             </div>
         </form>
+        <% }else{%>
+        <h3 class="text-center mt-5">Oops!!! There are not any diamonds for sell </h3>
+        <% } %>
 
         <jsp:include page="../Partials/footer.html"/>
 
