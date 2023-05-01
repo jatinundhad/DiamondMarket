@@ -2,7 +2,7 @@ package AuthenticationServlets;
 
 import Database.Database;
 import java.io.IOException;
-import java.util.Vector;
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -14,7 +14,8 @@ public class Register extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+        PrintWriter out = response.getWriter();
+        response.setContentType("text/html");
         // inserting all the information into database
         Database db = new Database();
 
@@ -25,6 +26,8 @@ public class Register extends HttpServlet {
         String email = request.getParameter("email").trim();
         String contact = request.getParameter("contact").trim();
         String password = request.getParameter("password").trim();
+        
+        
 
         String query = "INSERT INTO `user_credentials` VALUES('" + companyId + "','" + companyName + "','" + password + "','" + email + "','" + contact + "')";
 
@@ -38,7 +41,9 @@ public class Register extends HttpServlet {
             session.setAttribute("loggedIn", true);
             session.setAttribute("cart", new String[0]);
         } catch (Exception e) {
-            System.out.println("Error: " + e);
+            request.setAttribute("alert", "Company ID already exist");
+            request.getRequestDispatcher("/Authentication/Register.jsp").forward(request, response);
+            return;
         }
 
         db.close();

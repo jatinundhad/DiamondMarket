@@ -124,7 +124,7 @@
                                                 </div>
                                                 <div class="col-md-6 mb-4">
                                                     <div class="form-outline">
-                                                        <input type="number" id="pricePerCarat" class="form-control form-control-lg" name="pricePerCarat" required onfocusout="calculatePrice(this)"/>
+                                                        <input type="number" min="0" id="pricePerCarat" class="form-control form-control-lg" name="pricePerCarat" required onfocusout="calculatePrice(this)"/>
                                                         <label class="form-label" for="form3Example1n1">Price/Carat</label>
                                                     </div>
                                                 </div>
@@ -138,7 +138,7 @@
                                                 </div>
                                                 <div class="col-md-6 mb-4">
                                                     <div class="form-outline">
-                                                        <input type="number" id="rapPricePerCarat" class="form-control form-control-lg" name="rapPricePerCarat" required onfocusout="calculateRapPrice(this)"/>
+                                                        <input type="number" min="0" id="rapPricePerCarat" class="form-control form-control-lg" name="rapPricePerCarat" required onfocusout="calculateRapPrice(this)"/>
                                                         <label class="form-label" for="form3Example1n1">RAP-Price/Carat</label>
                                                     </div>
                                                 </div>
